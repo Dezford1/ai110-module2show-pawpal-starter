@@ -46,6 +46,7 @@ Overall, these updates strengthen the design by improving time handling, preserv
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+  The scheduler only checks for exact overlaps in task time windows when detecting conflicts. It does not attempt to shift tasks slightly or optimize overlapping durations. Reasoning: This tradeoff simplifies the logic and ensures that the scheduler is predictable and easy to maintain. For a pet care scenario, exact conflict avoidance is usually sufficient—owners mostly want to know which tasks cannot happen at the same time rather than a perfectly optimized minute-by-minute schedule. This keeps the system reliable and understandable while still helping the owner plan their day.
 
 ---
 
